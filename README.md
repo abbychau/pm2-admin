@@ -1,6 +1,6 @@
 # PM2 Admin
 
-A web-based administration interface for PM2 process manager.
+A modern web interface for monitoring and managing PM2 processes with VS Code integration.
 
 ![PM2 Admin Interface](/screenshot.png)
 
