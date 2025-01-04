@@ -1,6 +1,6 @@
-# PM2 Admin
+# PM2/Docker Admin
 
-A modern web interface for monitoring and managing PM2 processes with VS Code integration.
+A modern web interface for monitoring and managing PM2 processes and Docker containers with VS Code integration.
 
 ![PM2 Admin Interface](./screenshots/1.png)
 ![PM2 Admin Interface](./screenshots/2.png)
@@ -9,12 +9,17 @@ A modern web interface for monitoring and managing PM2 processes with VS Code in
 
 ## Features
 
-- Real-time monitoring of PM2 processes
+- Real-time monitoring of PM2 processes and Docker containers
 - View detailed process information including:
   - Memory and CPU usage
   - Process status
   - Working directory
   - Log file locations
+- Docker container management:
+  - View container status and details
+  - Start/Stop containers
+  - Restart containers
+  - Remove containers
 - Direct integration with VS Code for:
   - 📁 Opening project folders
   - 📄 Viewing log files
@@ -25,6 +30,7 @@ A modern web interface for monitoring and managing PM2 processes with VS Code in
 
 - Node.js 16.x or higher
 - PM2 installed globally (`npm install -g pm2`)
+- Docker installed and running
 - Visual Studio Code (for file/folder opening features)
 
 ## Installation
@@ -37,17 +43,15 @@ npm install
 yarn install
 ```
 
-## Development
+# Development
 
-Run the development server:
-
-```bash
+```
 npm run dev
-# or
+# or 
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the admin interface.
+Open [http://localhost:13001](http://localhost:13001) to view the admin interface.
 
 ## Usage
 
