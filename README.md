@@ -2,7 +2,10 @@
 
 A modern web interface for monitoring and managing PM2 processes with VS Code integration.
 
-![PM2 Admin Interface](/screenshot.png)
+![PM2 Admin Interface](./screenshots/1.png)
+![PM2 Admin Interface](./screenshots/2.png)
+![PM2 Admin Interface](./screenshots/3.png)
+![PM2 Admin Interface](./screenshots/4.png)
 
 ## Features
 

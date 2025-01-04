@@ -7,6 +7,8 @@ import {
   TableBody,
   TableCell,
   TableRow,
+  TableHeader,
+  TableHead,
 } from "@/components/ui/table"
 import {
   Collapsible,
@@ -34,36 +36,32 @@ export default function Home() {
   return (
     <div className="min-h-screen p-8">
       <h1 className="text-2xl font-bold mb-6">PM2 Processes</h1>
-      <div className="grid gap-4">
-        {processes.map((process) => (
-          <div
-            key={process.pm_id}
-            className="p-4 border rounded-lg hover:bg-gray-50 cursor-pointer"
-            onClick={() => setSelectedProcess(process.pm_id)}
-          >
-            <div className="flex justify-between items-center">
-              <div>
-                <h2 className="font-bold">{process.name}</h2>
-                <p className="text-sm text-gray-500">ID: {process.pm_id}</p>
-              </div>
-              <div className="flex gap-4">
-                <div>
-                  <p className="text-sm">Memory</p>
-                  <p>{Math.round(process.monit.memory / 1024 / 1024)} MB</p>
-                </div>
-                <div>
-                  <p className="text-sm">CPU</p>
-                  <p>{process.monit.cpu}%</p>
-                </div>
-                <div>
-                  <p className="text-sm">Status</p>
-                  <p>{process.pm2_env.status}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Name</TableHead>
+            <TableHead>ID</TableHead>
+            <TableHead>Memory</TableHead>
+            <TableHead>CPU</TableHead>
+            <TableHead>Status</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {processes.map((process) => (
+            <TableRow 
+              key={process.pm_id}
+              className="cursor-pointer hover:bg-gray-100"
+              onClick={() => setSelectedProcess(process.pm_id)}
+            >
+              <TableCell className="font-medium">{process.name}</TableCell>
+              <TableCell>{process.pm_id}</TableCell>
+              <TableCell>{Math.round(process.monit.memory / 1024 / 1024)} MB</TableCell>
+              <TableCell>{process.monit.cpu}%</TableCell>
+              <TableCell>{process.pm2_env.status}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
 
       {selectedProcess !== null && (
         <ProcessModal
